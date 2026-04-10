@@ -50,8 +50,22 @@
       titleHtml += '<div class="carousel__subtitle">' + escapeHtml(project.subtitle) + "</div>";
     }
 
+    var mediaHtml = renderMedia(project.media);
+    // Inject nav buttons inside the media container
+    mediaHtml = mediaHtml.replace(
+      '></div>',
+      '><div class="carousel__nav">' +
+        '<button class="carousel__btn carousel__btn--prev" type="button" aria-label="Previous project">' +
+          '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="currentColor"/></svg>' +
+        '</button>' +
+        '<button class="carousel__btn carousel__btn--next" type="button" aria-label="Next project">' +
+          '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" fill="currentColor"/></svg>' +
+        '</button>' +
+      '</div>'
+    );
+
     return (
-      renderMedia(project.media) +
+      mediaHtml +
       '<div class="carousel__info">' +
         '<div class="carousel__title-group">' + titleHtml + "</div>" +
         '<div class="carousel__role">' + escapeHtml(project.role) + "</div>" +
@@ -66,6 +80,28 @@
     videos.forEach(function (v) { v.play(); });
   }
 
+  function attachNavListeners() {
+    // Attach listeners to newly created buttons inside the media container
+    var mediaPrevBtn = content.querySelector(".carousel__btn--prev");
+    var mediaNextBtn = content.querySelector(".carousel__btn--next");
+
+    if (mediaPrevBtn) {
+      mediaPrevBtn.addEventListener("click", function () { update(index - 1); });
+      mediaPrevBtn.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft")  { e.preventDefault(); update(index - 1); }
+        if (e.key === "ArrowRight") { e.preventDefault(); update(index + 1); }
+      });
+    }
+
+    if (mediaNextBtn) {
+      mediaNextBtn.addEventListener("click", function () { update(index + 1); });
+      mediaNextBtn.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft")  { e.preventDefault(); update(index - 1); }
+        if (e.key === "ArrowRight") { e.preventDefault(); update(index + 1); }
+      });
+    }
+  }
+
   function update(newIndex) {
     if (!projects.length) return;
     const total = projects.length;
@@ -77,6 +113,7 @@
       content.innerHTML = renderCard(projects[index]);
       content.classList.remove("is-transitioning");
       manageVideo();
+      attachNavListeners();
     }, 180);
   }
 
@@ -93,11 +130,14 @@
     });
   });
 
-  // Hide nav arrows when there's only one project
+  // Hide nav arrows when there's only one project (hide the old nav container)
   function syncNavVisibility() {
     const show = projects.length > 1;
-    prevBtn.style.display = show ? "" : "none";
-    nextBtn.style.display = show ? "" : "none";
+    // Hide the old carousel__nav container in the HTML
+    var oldNav = document.querySelector(".carousel__nav:not(.carousel__media .carousel__nav)");
+    if (oldNav) {
+      oldNav.style.display = show ? "" : "none";
+    }
   }
 
   // --- Helpers ---------------------------------------------------------------
@@ -135,6 +175,7 @@
       return;
     }
     content.innerHTML = renderCard(projects[0]);
+    attachNavListeners();
     syncNavVisibility();
   }
 

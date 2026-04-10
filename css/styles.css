@@ -43,6 +43,7 @@ html {
   font-size: 100%;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -259,6 +260,15 @@ section { margin-bottom: 5rem; }
   .hero__reel-label { font-size: 0.8125rem; }
 }
 
+/* Landscape orientation on phones: constrain video height to fit viewport */
+@media (orientation: landscape) and (max-width: 767px) {
+  .hero__reel {
+    max-height: calc(100dvh - 5rem);
+    width: auto;
+    max-width: none;
+  }
+}
+
 .hero__positioning {
   max-width: 56rem;
   margin-inline: auto;
@@ -279,6 +289,27 @@ section { margin-bottom: 5rem; }
   font-weight: 500;
   color: var(--color-text-muted);
   letter-spacing: 0.01em;
+}
+
+/* Mobile line breaks for bridge statement and tagline */
+@media (max-width: 767px) {
+  .hero__positioning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Hide default br tags on mobile and show mobile-specific ones */
+  .hero__positioning br { display: none; }
+  .hero__positioning br.mobile-break { display: inline; }
+
+  /* Tagline: each supporting statement on its own line */
+  .hero__tagline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
 }
 
 /* ==========================================================================
@@ -351,10 +382,11 @@ section { margin-bottom: 5rem; }
 }
 
 .carousel__media {
+  position: relative;
   aspect-ratio: 16 / 9;
   background: var(--color-charcoal);
   border-radius: 0.75rem;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15);
   border: 1px solid var(--color-border);
 }
@@ -428,54 +460,59 @@ section { margin-bottom: 5rem; }
   transition: opacity 280ms var(--ease);
 }
 
-/* Carousel navigation arrows */
+/* Carousel navigation arrows — overlaid on media container */
 .carousel__nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10;
+  padding-inline: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .carousel__nav {
+    padding-inline: 1rem;
+  }
 }
 
 .carousel__btn {
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
-  background: #ffffff;
-  color: var(--color-amber);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-charcoal);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px -6px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: background-color 200ms var(--ease), color 200ms var(--ease), transform 200ms var(--ease);
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) {
+  .carousel__btn {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
 .carousel__btn:hover {
-  background: var(--color-amber);
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-amber);
 }
 
 .carousel__btn:active { transform: scale(0.95); }
 
 .carousel__btn svg { width: 1.25rem; height: 1.25rem; }
 
-/* Desktop: absolute-positioned arrows flanking the panel */
-@media (min-width: 1024px) {
-  .carousel__nav {
-    margin-top: 0;
-    gap: 0;
-  }
-  .carousel__btn { width: 3rem; height: 3rem; }
-  .carousel__btn--prev,
-  .carousel__btn--next {
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    z-index: 5;
-  }
-  .carousel__btn--prev { left: 1rem; }
-  .carousel__btn--next { right: 1rem; }
-  .carousel__btn--prev:active,
-  .carousel__btn--next:active { transform: translateY(-50%) scale(0.95); }
+@media (min-width: 768px) {
+  .carousel__btn svg { width: 1.5rem; height: 1.5rem; }
 }
 
 /* ==========================================================================
@@ -586,9 +623,9 @@ section { margin-bottom: 5rem; }
   display: inline-block;
   font-family: var(--font-headline);
   font-weight: 800;
-  font-size: clamp(1.125rem, 3.5vw, 2rem);
+  font-size: clamp(0.85rem, 3.5vw, 2rem);
   color: var(--color-brand-blue);
-  word-break: break-word;
+  white-space: nowrap;
   transition: opacity 200ms var(--ease);
 }
 
