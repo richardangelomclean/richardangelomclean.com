@@ -28,6 +28,16 @@
   var activeClass = "nav__link--active";
   var ticking = false;
 
+  // Get absolute top of an element by walking offsetParent chain
+  function getAbsoluteTop(el) {
+    var top = 0;
+    while (el) {
+      top += el.offsetTop;
+      el = el.offsetParent;
+    }
+    return top;
+  }
+
   function setActive(link) {
     navLinks.forEach(function(l) {
       l.classList.remove(activeClass);
@@ -54,17 +64,18 @@
       // Get nav height for offset (the nav is fixed at the top)
       var nav = document.querySelector(".nav");
       var navHeight = nav ? nav.offsetHeight : 0;
-      var offset = navHeight + 20; // Small buffer below the nav
+      var offset = navHeight + 40; // Buffer below the nav
+
+      // The trigger point in the document
+      var triggerPoint = scrollY + offset;
 
       // Find which section is currently active
-      // The active section is the last one whose top is at or above the offset
-      // This handles sections of varying heights and ensures About always highlights
+      // The active section is the last one whose absolute top is at or above the trigger point
       var current = sections[0]; // Default to first section
 
       for (var i = 0; i < sections.length; i++) {
-        var rect = sections[i].element.getBoundingClientRect();
-        // Pick the last section that has scrolled to the offset point
-        if (rect.top <= offset) {
+        var sectionTop = getAbsoluteTop(sections[i].element);
+        if (sectionTop <= triggerPoint) {
           current = sections[i];
         }
       }
