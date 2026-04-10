@@ -18,29 +18,46 @@
 
   // --- Render a single project card ------------------------------------------
 
-  function renderMedia(media) {
+  function renderMediaWithButtons(media) {
+    var mediaHtml = '';
+
     if (!media || !media.src) {
-      return '<div class="carousel__media" aria-hidden="true"></div>';
+      mediaHtml = '<div class="carousel__media" aria-hidden="true"></div>';
+    } else {
+      const safeAlt = escapeHtml(media.alt || "");
+
+      if (media.type === "video") {
+        const poster = media.poster ? ` poster="${escapeAttr(media.poster)}"` : "";
+        mediaHtml = (
+          '<div class="carousel__media">' +
+            '<video src="' + escapeAttr(media.src) + '"' + poster +
+            ' autoplay muted loop playsinline preload="metadata"' +
+            ' aria-label="' + safeAlt + '"></video>' +
+          "</div>"
+        );
+      } else {
+        // Default to image
+        mediaHtml = (
+          '<div class="carousel__media">' +
+            '<img src="' + escapeAttr(media.src) + '" alt="' + safeAlt + '" loading="lazy" />' +
+          "</div>"
+        );
+      }
     }
 
-    const safeAlt = escapeHtml(media.alt || "");
-
-    if (media.type === "video") {
-      const poster = media.poster ? ` poster="${escapeAttr(media.poster)}"` : "";
-      return (
-        '<div class="carousel__media">' +
-          '<video src="' + escapeAttr(media.src) + '"' + poster +
-          ' autoplay muted loop playsinline preload="metadata"' +
-          ' aria-label="' + safeAlt + '"></video>' +
-        "</div>"
-      );
-    }
-
-    // Default to image
+    // Wrap media and buttons in a container with position: relative
     return (
-      '<div class="carousel__media">' +
-        '<img src="' + escapeAttr(media.src) + '" alt="' + safeAlt + '" loading="lazy" />' +
-      "</div>"
+      '<div class="carousel__media-wrapper">' +
+        mediaHtml +
+        '<div class="carousel__overlay-buttons">' +
+          '<button class="carousel__btn carousel__btn--prev" type="button" aria-label="Previous project">' +
+            '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="currentColor"/></svg>' +
+          '</button>' +
+          '<button class="carousel__btn carousel__btn--next" type="button" aria-label="Next project">' +
+            '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" fill="currentColor"/></svg>' +
+          '</button>' +
+        '</div>' +
+      '</div>'
     );
   }
 
@@ -51,7 +68,7 @@
     }
 
     return (
-      renderMedia(project.media) +
+      renderMediaWithButtons(project.media) +
       '<div class="carousel__info">' +
         '<div class="carousel__title-group">' + titleHtml + "</div>" +
         '<div class="carousel__role">' + escapeHtml(project.role) + "</div>" +
@@ -76,28 +93,32 @@
     window.setTimeout(function () {
       content.innerHTML = renderCard(projects[index]);
       content.classList.remove("is-transitioning");
+      attachButtonListeners();
       manageVideo();
+      syncNavVisibility();
     }, 180);
   }
 
-  // --- Controls --------------------------------------------------------------
-
-  prevBtn.addEventListener("click", function () { update(index - 1); });
-  nextBtn.addEventListener("click", function () { update(index + 1); });
-
-  // Keyboard: left/right when a carousel button is focused
-  [prevBtn, nextBtn].forEach(function (btn) {
-    btn.addEventListener("keydown", function (e) {
-      if (e.key === "ArrowLeft")  { e.preventDefault(); update(index - 1); }
-      if (e.key === "ArrowRight") { e.preventDefault(); update(index + 1); }
+  function attachButtonListeners() {
+    const prevBtns = content.querySelectorAll(".carousel__btn--prev");
+    const nextBtns = content.querySelectorAll(".carousel__btn--next");
+    prevBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () { update(index - 1); });
     });
-  });
+    nextBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () { update(index + 1); });
+    });
+  }
 
-  // Hide nav arrows when there's only one project
+  // --- Controls (old buttons hidden, listeners attached to overlay buttons) ------
+
+  // Hide overlay nav arrows when there's only one project
   function syncNavVisibility() {
     const show = projects.length > 1;
-    prevBtn.style.display = show ? "" : "none";
-    nextBtn.style.display = show ? "" : "none";
+    const prevBtns = content.querySelectorAll(".carousel__btn--prev");
+    const nextBtns = content.querySelectorAll(".carousel__btn--next");
+    prevBtns.forEach(function (btn) { btn.style.display = show ? "" : "none"; });
+    nextBtns.forEach(function (btn) { btn.style.display = show ? "" : "none"; });
   }
 
   // --- Helpers ---------------------------------------------------------------
@@ -130,11 +151,10 @@
     projects = Array.isArray(data.projects) ? data.projects : [];
     if (!projects.length) {
       content.innerHTML = '<p class="carousel__description">No projects to display yet.</p>';
-      prevBtn.style.display = "none";
-      nextBtn.style.display = "none";
       return;
     }
     content.innerHTML = renderCard(projects[0]);
+    attachButtonListeners();
     syncNavVisibility();
   }
 
