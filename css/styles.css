@@ -190,6 +190,17 @@ section { margin-bottom: 5rem; }
   margin: 0 0 2rem;
   max-width: 60rem;
   margin-inline: auto;
+  overflow-wrap: break-word;
+}
+
+.hero__nowrap {
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .hero__nowrap {
+    white-space: normal;
+  }
 }
 
 .hero__headline .accent { color: var(--color-brand-blue); }
@@ -379,6 +390,13 @@ section { margin-bottom: 5rem; }
   border: 1px solid var(--color-border);
 }
 
+@media (min-width: 768px) {
+  .carousel__media {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
 .carousel__media img,
 .carousel__media video {
   width: 100%;
@@ -448,7 +466,7 @@ section { margin-bottom: 5rem; }
   transition: opacity 280ms var(--ease);
 }
 
-/* Carousel navigation arrows (old location, hidden) */
+/* Carousel navigation arrows (old location, always hidden) */
 .carousel__nav {
   display: none;
 }
@@ -459,8 +477,22 @@ section { margin-bottom: 5rem; }
   overflow: visible;
 }
 
+@media (min-width: 768px) {
+  .carousel__media-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
 .carousel__overlay-buttons {
   pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .carousel__overlay-buttons {
+    display: contents;
+  }
 }
 
 .carousel__btn {
@@ -481,7 +513,7 @@ section { margin-bottom: 5rem; }
   cursor: pointer;
   z-index: 5;
   pointer-events: auto;
-  transition: background-color 200ms var(--ease), transform 200ms var(--ease);
+  transition: background-color 200ms var(--ease), transform 200ms var(--ease), border-color 200ms var(--ease);
 }
 
 .carousel__btn--prev { left: 12px; }
@@ -497,11 +529,37 @@ section { margin-bottom: 5rem; }
 
 /* Mobile: 40x40 buttons (already set above) */
 
-/* Desktop: 48x48 buttons */
+/* Desktop: 48x48 buttons, flanking layout */
 @media (min-width: 768px) {
   .carousel__btn {
+    position: static;
+    transform: none;
     width: 48px;
     height: 48px;
+    background: var(--color-bg);
+    color: var(--color-amber);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+  }
+
+  .carousel__btn:hover {
+    border-color: var(--color-amber);
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .carousel__btn:active {
+    transform: scale(0.95);
+  }
+
+  .carousel__btn--prev {
+    left: auto;
+    order: -1;
+  }
+
+  .carousel__btn--next {
+    right: auto;
+    order: 1;
   }
 }
 
@@ -552,6 +610,12 @@ section { margin-bottom: 5rem; }
   letter-spacing: -0.02em;
   color: var(--color-charcoal);
   margin: 0;
+}
+
+@media (max-width: 767px) {
+  .about__bridge {
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+  }
 }
 
 .about__credential {

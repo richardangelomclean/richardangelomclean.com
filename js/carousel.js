@@ -94,6 +94,7 @@
       content.innerHTML = renderCard(projects[index]);
       content.classList.remove("is-transitioning");
       attachButtonListeners();
+      attachStaticButtonListeners();
       manageVideo();
       syncNavVisibility();
     }, 180);
@@ -108,6 +109,17 @@
     nextBtns.forEach(function (btn) {
       btn.addEventListener("click", function () { update(index + 1); });
     });
+  }
+
+  function attachStaticButtonListeners() {
+    const staticPrev = document.getElementById("carousel-prev");
+    const staticNext = document.getElementById("carousel-next");
+    if (staticPrev) {
+      staticPrev.onclick = function() { update(index - 1); };
+    }
+    if (staticNext) {
+      staticNext.onclick = function() { update(index + 1); };
+    }
   }
 
   // --- Controls (old buttons hidden, listeners attached to overlay buttons) ------
@@ -155,6 +167,7 @@
     }
     content.innerHTML = renderCard(projects[0]);
     attachButtonListeners();
+    attachStaticButtonListeners();
     syncNavVisibility();
   }
 
