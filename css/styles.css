@@ -325,7 +325,10 @@ section { margin-bottom: 5rem; }
 }
 
 @media (min-width: 768px) {
-  .projects__panel { padding: 3.5rem 2rem; }
+  .projects__panel {
+    padding: 3.5rem 2rem;
+    position: relative;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -388,13 +391,6 @@ section { margin-bottom: 5rem; }
   overflow: hidden;
   box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15);
   border: 1px solid var(--color-border);
-}
-
-@media (min-width: 768px) {
-  .carousel__media {
-    flex: 1;
-    min-width: 0;
-  }
 }
 
 .carousel__media img,
@@ -466,9 +462,21 @@ section { margin-bottom: 5rem; }
   transition: opacity 280ms var(--ease);
 }
 
-/* Carousel navigation arrows (old location, always hidden) */
+/* Carousel navigation arrows (old location, hidden on mobile, shown on desktop) */
 .carousel__nav {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .carousel__nav {
+    display: flex;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+    padding-inline: -3.5rem;
+  }
 }
 
 /* Overlay wrapper for media + buttons */
@@ -477,21 +485,13 @@ section { margin-bottom: 5rem; }
   overflow: visible;
 }
 
-@media (min-width: 768px) {
-  .carousel__media-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-}
-
 .carousel__overlay-buttons {
   pointer-events: none;
 }
 
 @media (min-width: 768px) {
   .carousel__overlay-buttons {
-    display: contents;
+    display: none;
   }
 }
 
@@ -529,18 +529,19 @@ section { margin-bottom: 5rem; }
 
 /* Mobile: 40x40 buttons (already set above) */
 
-/* Desktop: 48x48 buttons, flanking layout */
+/* Desktop: 48x48 buttons, positioned absolutely outside the card */
 @media (min-width: 768px) {
   .carousel__btn {
-    position: static;
-    transform: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 48px;
     height: 48px;
     background: var(--color-bg);
     color: var(--color-amber);
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    flex-shrink: 0;
+    pointer-events: auto;
   }
 
   .carousel__btn:hover {
@@ -549,17 +550,15 @@ section { margin-bottom: 5rem; }
   }
 
   .carousel__btn:active {
-    transform: scale(0.95);
+    transform: translateY(-50%) scale(0.95);
   }
 
   .carousel__btn--prev {
-    left: auto;
-    order: -1;
+    left: -3.5rem;
   }
 
   .carousel__btn--next {
-    right: auto;
-    order: 1;
+    right: -3.5rem;
   }
 }
 
