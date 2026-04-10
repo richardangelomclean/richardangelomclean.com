@@ -462,21 +462,9 @@ section { margin-bottom: 5rem; }
   transition: opacity 280ms var(--ease);
 }
 
-/* Carousel navigation arrows (old location, hidden on mobile, shown on desktop) */
+/* Carousel navigation arrows (old location, hidden on all sizes) */
 .carousel__nav {
   display: none;
-}
-
-@media (min-width: 768px) {
-  .carousel__nav {
-    display: flex;
-    position: absolute;
-    inset: 0;
-    align-items: center;
-    justify-content: space-between;
-    pointer-events: none;
-    padding-inline: -3.5rem;
-  }
 }
 
 /* Overlay wrapper for media + buttons */
@@ -487,12 +475,7 @@ section { margin-bottom: 5rem; }
 
 .carousel__overlay-buttons {
   pointer-events: none;
-}
-
-@media (min-width: 768px) {
-  .carousel__overlay-buttons {
-    display: none;
-  }
+  display: flex;
 }
 
 .carousel__btn {
@@ -558,21 +541,21 @@ section { margin-bottom: 5rem; }
   }
 
   .carousel__btn--prev {
-    left: -0.5rem;
+    left: -2rem;
   }
 
   .carousel__btn--next {
-    right: -0.5rem;
+    right: -2rem;
   }
 }
 
 @media (min-width: 1024px) {
   .carousel__btn--prev {
-    left: -1.5rem;
+    left: -2rem;
   }
 
   .carousel__btn--next {
-    right: -1.5rem;
+    right: -2rem;
   }
 }
 

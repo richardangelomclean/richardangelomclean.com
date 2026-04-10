@@ -57,11 +57,13 @@
       var offset = navHeight + 20; // Small buffer below the nav
 
       // Find which section is currently active
-      // The active section is the last one whose top has scrolled past the offset point
+      // The active section is the last one whose top is at or above the offset
+      // This handles sections of varying heights and ensures About always highlights
       var current = sections[0]; // Default to first section
 
       for (var i = 0; i < sections.length; i++) {
         var rect = sections[i].element.getBoundingClientRect();
+        // Pick the last section that has scrolled to the offset point
         if (rect.top <= offset) {
           current = sections[i];
         }
