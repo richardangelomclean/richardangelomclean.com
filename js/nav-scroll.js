@@ -69,13 +69,18 @@
       // The trigger point in the document
       var triggerPoint = scrollY + offset;
 
-      // Find which section is currently active
-      // The active section is the last one whose absolute top is at or above the trigger point
-      var current = sections[0]; // Default to first section
+      // Find which section is currently active using "nearest section" algorithm.
+      // The active section is whichever section's top is closest to the trigger
+      // point. This gives short sections (like About) a fair share of scroll
+      // range — each section's zone extends halfway to its neighbours.
+      var current = sections[0];
+      var closestDist = Infinity;
 
       for (var i = 0; i < sections.length; i++) {
         var sectionTop = getAbsoluteTop(sections[i].element);
-        if (sectionTop <= triggerPoint) {
+        var dist = Math.abs(triggerPoint - sectionTop);
+        if (dist < closestDist) {
+          closestDist = dist;
           current = sections[i];
         }
       }
