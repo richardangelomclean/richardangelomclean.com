@@ -5,7 +5,7 @@ __loadProjects({
       "brand": "Magic: The Gathering",
       "subtitle": "Pro Tour",
       "role": "Assistant Director",
-      "description": "An Olympic-style broadcast where multiple tournament matches play out simultaneously, and each one needs to be captured, replayed, and slotted into the broadcast while live commentators call the action.\n\nI oversee three EVS replay operators, calculate playback speeds based on where we are in the schedule, and coordinate with the director and producer to keep the broadcast on time.",
+      "description": "An Olympic-style tournament broadcast with multiple events each year, streamed live on Twitch and YouTube. Four matches are recorded simultaneously to EVS machines, then scheduled into the run of show and played back while live commentators call the action.\n\nBetween rounds, we capture offline interviews with winners and play them back later off the EVS machines.\n\nI collaborate with the EVS replay team (three operators), overseeing asset management, graphics delivery, ingest of video packages, and making sure every replay playback is accurate across the full broadcast.",
       "media": {
         "type": "image",
         "src": "assets/projects/mtg-pro-tour.jpg",
@@ -17,7 +17,7 @@ __loadProjects({
       "brand": "Pokémon",
       "subtitle": "The Gotta Catch 'Em All! Game Show",
       "role": "Director / Technical Director",
-      "description": "An interactive trivia game show with no fixed run of show. How the game plays out determines what the production does next.\n\nI collaborated on the vMix project build and designed the switching controls in Bitfocus Companion to be flexible enough to adapt in real time, then operated them live while calling cues to the crew. Produced both in-studio and on stage at Pokémon Worlds.",
+      "description": "A live trivia game show on the Pokémon Twitch channel where the game mechanics drive the content.\n\nContestants catch Pokémon by answering questions correctly, and each Pokémon comes with a special ability that can be used to gain an advantage or disrupt opponents. Twitch chat votes to influence what happens next. No two episodes play out the same way.\n\nI collaborated with the engineering team to build the production system, then designed the switching controls so the show could be operated in real time as the game unfolded.",
       "media": {
         "type": "video",
         "src": "assets/projects/pokemon-game-show.mp4",
@@ -29,7 +29,7 @@ __loadProjects({
       "brand": "PBS",
       "subtitle": "Homemade Live!",
       "role": "Technical Director",
-      "description": "Three seasons of a cooking show for PBS. I ran the multi-camera shoot with the DP, director, and camera operators, always shooting with the edit in mind so post-production had the coverage they needed.",
+      "description": "Three seasons of a nationally broadcast cooking show filmed in Seattle with a live studio audience. Guests have included Katie Couric, Kenji López-Alt, and Kathie Lee Gifford.\n\nI oversaw the multi-camera department for a five-camera shoot, calling cameras live and performing a line cut that went to post-production alongside the isolated camera recordings. The goal on every shoot was making sure each camera captured unique coverage so the edit had everything it needed.",
       "media": {
         "type": "video",
         "src": "assets/projects/pbs-homemade-live.mp4",
@@ -39,13 +39,25 @@ __loadProjects({
     {
       "id": "dnd-stream-of-annihilation",
       "brand": "Dungeons & Dragons",
-      "subtitle": "Stream of Annihilation & The Descent",
+      "subtitle": "Stream of Annihilation",
       "role": "Technical Director / Co-Producer",
-      "description": "Stream of Annihilation was Dungeons & Dragons' first major live stream event, a two-day broadcast from Seattle featuring the biggest names in D&D streaming.\n\nTwo years later, the format scaled into D&D Live 2019: The Descent, a three-day, 50+ hour production in Los Angeles with multiple simultaneous studios and a cast that included Joe Manganiello, Matthew Mercer, and Deborah Ann Woll.",
+      "description": "Dungeons & Dragons' first major livestream event. A two-day broadcast from Seattle featuring the largest assembly of D&D streamers ever brought together, including Matt Mercer, Joe Manganiello, Chris Perkins, and Satine Phoenix.\n\nI assembled the crew, managed the six-figure production budget, designed the signal path and engineering plan, sourced all equipment, and ran the video switcher during both twelve-hour broadcast days.",
       "media": {
         "type": "video",
         "src": "assets/projects/dnd-stream-of-annihilation.mp4",
-        "alt": "Dungeons and Dragons live stream event production clip."
+        "alt": "Dungeons and Dragons Stream of Annihilation live stream event production clip."
+      }
+    },
+    {
+      "id": "dnd-the-descent",
+      "brand": "Dungeons & Dragons",
+      "subtitle": "D&D Live 2019: The Descent",
+      "role": "Producer / Director",
+      "description": "A three-day, 50+ hour production in Los Angeles with a main stage, four simultaneous streaming pods, and a live concert finale directed by Chris Funk of the Decemberists. The cast included Joe Manganiello, Deborah Ann Woll, Matthew Lillard, and Patrick Rothfuss.\n\nI managed the production budget, assembled and oversaw crews for all the pods and the main stage, then produced and directed the livestream broadcast, calling cameras throughout the show.",
+      "media": {
+        "type": "video",
+        "src": "assets/projects/dnd-the-descent.mp4",
+        "alt": "Dungeons and Dragons D&D Live 2019 The Descent production clip."
       }
     },
     {
@@ -53,7 +65,7 @@ __loadProjects({
       "brand": "Reddit",
       "subtitle": "Hall R — Terminator: Dark Fate AMA",
       "role": "Producer",
-      "description": "Reddit's first-ever live-streamed Ask Me Anything, broadcast from San Diego Comic-Con with Arnold Schwarzenegger, Linda Hamilton, and the cast of Terminator: Dark Fate.\n\nA new format for a platform that had only done text-based AMAs before, requiring a production approach that felt native to Reddit while delivering a broadcast-quality live stream.",
+      "description": "Reddit's first-ever live-streamed Ask Me Anything, broadcast from San Diego Comic-Con with Arnold Schwarzenegger, Linda Hamilton, and the cast of Terminator: Dark Fate.\n\nWe used Hovercast to connect directly to Reddit's API, pulling live posts from the platform and displaying them as on-screen graphics integrated into the broadcast. I fed cues to host Scott Rogowsky via IFB throughout the show. Produced in collaboration with Mirrored Media.",
       "media": {
         "type": "video",
         "src": "assets/projects/reddit-hall-r.mp4",
@@ -63,8 +75,9 @@ __loadProjects({
     {
       "id": "fanatics-fest-nyc",
       "brand": "Fanatics Fest NYC",
+      "subtitle": "Center Stage",
       "role": "Director / Show Caller",
-      "description": "Center Stage at the inaugural Fanatics Fest NYC, a three-day festival at the Javits Center that drew over 70,000 fans.\n\nI directed cameras for the live stage show and the image magnification (IMAG) screens, calling audio, lighting, and talent cues for panels and live podcast recordings. All content was captured for on-demand distribution.",
+      "description": "The inaugural Fanatics Fest NYC, a three-day festival at the Javits Center that drew over 70,000 fans.\n\nI directed cameras for the live stage show and the IMAG screens, calling audio, lighting, and talent cues for panels and live podcast recordings. All content was captured for on-demand viewing.",
       "media": {
         "type": "video",
         "src": "assets/projects/fanatics-fest-nyc.mp4",
@@ -72,11 +85,23 @@ __loadProjects({
       }
     },
     {
+      "id": "pokemon-worlds-game-show",
+      "brand": "Pokémon",
+      "subtitle": "The Gotta Catch 'Em All! Game Show Live at Pokémon Worlds",
+      "role": "Camera Director / Show Caller",
+      "description": "The live stage version of the Gotta Catch 'Em All! Game Show, performed on the Programming Stage at the 2025 Pokémon World Championships in Anaheim for an audience of several hundred.\n\nHosted by Brian David Gilbert with three contestants, each at a podium with a physical buzzer system that connected directly to our broadcast. I directed six cameras for IMAG and recording as the game's software drove the show in real time.",
+      "media": {
+        "type": "video",
+        "src": "assets/projects/pokemon-worlds-game-show.mp4",
+        "alt": "Pokémon Gotta Catch Em All game show live stage performance at Pokémon World Championships 2025."
+      }
+    },
+    {
       "id": "red-bull-home-ground",
       "brand": "Red Bull Home Ground",
       "subtitle": "Ludwig & Tarik Co-Stream",
       "role": "Technical Director",
-      "description": "An eight-hour Valorant tournament broadcast from Fremont Studios in Seattle. I ran the switcher for the full show as two of the biggest names in streaming added live commentary over the esports feed.",
+      "description": "The first-ever Red Bull Home Ground North American Qualifier, a Valorant tournament at Fremont Studios in Seattle featuring Cloud9, Sentinels, and Shopify Rebellion competing for a spot at the World Finals.\n\nI operated the switcher for the co-stream, a multi-camera commentary broadcast featuring Ludwig Ahgren and Tarik Çelik. During matches, they appeared picture-in-picture over the main esports feed. During lulls, they went full screen. Eight hours of live switching as the tournament unfolded.",
       "media": {
         "type": "video",
         "src": "assets/projects/red-bull-home-ground.mp4",
@@ -87,7 +112,7 @@ __loadProjects({
       "id": "crunchyroll-anime-awards",
       "brand": "Crunchyroll Anime Awards",
       "role": "Technical Director / Camera Director",
-      "description": "Annual awards ceremony for the world's largest anime streaming platform, co-hosted by WWE Superstar Xavier Woods and broadcast live on Twitch.",
+      "description": "The 4th annual Anime Awards, co-hosted by WWE Superstar Xavier Woods and Crunchyroll's Tim Lyu. Nineteen categories broadcast live on Twitch and YouTube in eight languages, with presenters including LilyPichu, SungWon Cho, and King Vader.\n\nI directed cameras and operated the switcher for the live broadcast, collaborating with the camera department, video playback, and graphics team throughout the show.",
       "media": {
         "type": "video",
         "src": "assets/projects/crunchyroll-anime-awards.mp4",
@@ -99,11 +124,11 @@ __loadProjects({
       "brand": "Amazon Games",
       "subtitle": "Throne and Liberty — \"Siege the Day\"",
       "role": "Director",
-      "description": "A two-day live stream launching Amazon Games' MMORPG Throne and Liberty, broadcast from their Seattle studio for North American and European audiences.\n\nThe production used 16 observer machines operating virtual cameras inside the game world to cover a castle siege where thousands of players fought simultaneously.",
+      "description": "A two-day live stream launching Amazon Games' MMORPG Throne and Liberty, broadcast from their Seattle studio for North American and European audiences. Hosted by PancakepowTV with shoutcaster Notgrenton.\n\nThe centerpiece was Castle Siege, one of the few game modes in online gaming where thousands of players fight simultaneously on a single server. Covering that required 16 observer machines, each one a virtual camera inside the game world fed into our switcher. I directed the broadcast as the hosts and commentators called the action from the studio.",
       "media": {
-        "type": "image",
-        "src": "assets/projects/throne-and-liberty.jpg",
-        "alt": "Throne and Liberty Siege the Day production crew in the Amazon Games studio."
+        "type": "video",
+        "src": "assets/projects/throne-and-liberty.mp4",
+        "alt": "Throne and Liberty Siege the Day live stream production clip."
       }
     },
     {
@@ -111,7 +136,7 @@ __loadProjects({
       "brand": "Amazon / Crown Channel",
       "subtitle": "Pit Crew",
       "role": "Technical Director",
-      "description": "An Intel-sponsored competition show on Amazon's Crown Channel where pro gamers faced off against amateurs in popular competitive titles.\n\nBetween rounds, the pros' hardware was downgraded while the amateurs received upgrades, blending esports gameplay coverage with live entertainment segments as the conditions shifted throughout the show.",
+      "description": "An Intel-sponsored competition show on Amazon's Crown Channel, hosted by Trisha Hershberger and Malik Forté.\n\nThe concept: pro gamers face off against amateurs in popular competitive video games. Between rounds, the pros' hardware gets downgraded while the amateurs receive upgrades. By the final round, the conditions have completely flipped. The production had to blend esports gameplay coverage with live entertainment segments, adapting as the balance shifted throughout the show.\n\nI operated the switcher in vMix and designed and built the custom switching controls using Bitfocus Companion on Elgato Stream Decks.",
       "media": {
         "type": "video",
         "src": "assets/projects/pit-crew.mp4",
@@ -123,7 +148,7 @@ __loadProjects({
       "brand": "Amazon / Crown Channel",
       "subtitle": "Good @ Stuff",
       "role": "Producer",
-      "description": "A long-form live stream arts and crafts show on Amazon's Crown Channel, hosted by Gina DeVivo. I produced the first season, shaping the format and pacing for a show designed around real-time collaboration with Twitch chat.\n\nIn the clip featured here, the talent started with a completely blank game board and built an entire game live on stream, drawing from their own friendship and memories while incorporating suggestions from the audience.",
+      "description": "A long-form arts and crafts live stream on Amazon's Crown Channel, hosted by Gina DeVivo. Guests included Doug Jones, AEW wrestler Nyla Rose, and actor Todd Stashwick.\n\nI produced the first season, shaping the format and pacing for a show built around real-time collaboration with Twitch chat.\n\nIn the featured clip, the talent started with a blank game board and created an entire game live on stream, drawing from their personal experiences and suggestions from the audience. For the second half of the episode, they played through the entire game they had just created.",
       "media": {
         "type": "video",
         "src": "assets/projects/good-at-stuff.mp4",
@@ -134,7 +159,7 @@ __loadProjects({
       "id": "gameloop",
       "brand": "GAMELOOP",
       "role": "Consulting Designer & Engineer",
-      "description": "Designed and engineered the complete remote production system for an interactive gaming channel broadcasting on Samsung Smart TVs.\n\nI built the signal path, the vMix project, and the Stream Deck controls through Bitfocus Companion, then trained the team to operate everything independently. Consulted remotely from Seattle during their first pilot broadcasts.",
+      "description": "An interactive gaming channel on Samsung Smart TVs where viewers watch a live host, play along from their phones, and interact through chat and polls powered by Hovercast.\n\nI designed and built the complete production system from my home office in Seattle for their studio in Philadelphia. Gear recommendations for what the team needed to purchase, signal path design, a full vMix project, and Stream Deck controls programmed through Bitfocus Companion. Every design decision came back to one question: what does the operator need to know, see, and do in the moment they need to do it? I trained the team to operate the full system independently, then consulted remotely during their first pilot broadcasts.",
       "media": {
         "type": "image",
         "src": "assets/projects/gameloop.jpg",
@@ -146,7 +171,7 @@ __loadProjects({
       "brand": "University of Washington",
       "subtitle": "Building Community Through Live Streaming",
       "role": "Course Creator & Instructor",
-      "description": "A graduate course I designed for the Communication Leadership program, taught every winter quarter since 2024.\n\nThe curriculum translates what I've learned from professional multi-camera production into tools and frameworks that marketing and communications professionals can apply using platforms like StreamYard and Mentimeter.",
+      "description": "A graduate practicum I designed for the Communication Leadership program, taught every winter quarter since 2024. The course explores the difference between live streaming as traditional event coverage and the conversational, community-focused approach of creators on platforms like Twitch and YouTube.\n\nStudents design and produce their own live streams, experimenting with strategies that invite participation and make audiences feel seen and heard. Throughout the quarter, they apply these principles to projects tied to their own professional roles. The course culminates in a team production: a live stream for Comm Lead's annual Connects conference.\n\nThe curriculum translates what I've learned from professional multi-camera production into tools and frameworks that marketing and communications professionals can apply, from simple webcam setups to productions with professional crews and equipment.",
       "media": {
         "type": "image",
         "src": "assets/projects/uw-building-community.jpg",
@@ -154,22 +179,23 @@ __loadProjects({
       }
     },
     {
-      "id": "uw-covid-programming",
-      "brand": "University of Washington (COVID Programming)",
+      "id": "uw-public-lectures",
+      "brand": "University of Washington",
+      "subtitle": "Office of Public Lectures",
       "role": "Technical Producer",
-      "description": "When the pandemic shut down in-person programming, I produced 40+ live stream episodes for the university.\n\nThe flagship series, \"Coexisting with Covid-19,\" brought 15 episodes of academic discussion to audiences in 47 states and 33 countries across six continents.",
+      "description": "When the pandemic shut down the Office of Public Lectures' in-person programming, I helped them pivot to an entirely virtual operation. Over the course of the pandemic, I produced and directed 40+ live stream episodes across multiple series and shows.\n\nI built out virtual production workflows on AWS EC2 instances and developed techniques for pulling NDI feeds out of Zoom Rooms and Zoom ISO, pioneering remote production methods that didn't exist yet at the time. The flagship series, \"Coexisting with Covid-19,\" brought 15 episodes of academic discussion to audiences in 47 states and 33 countries across six continents.",
       "media": {
         "type": "video",
         "src": "assets/projects/uw-covid-programming.mp4",
-        "alt": "University of Washington COVID-19 live stream programming production clip."
+        "alt": "University of Washington Office of Public Lectures live stream programming production clip."
       }
     },
     {
       "id": "truth-in-education",
       "brand": "Institute for Common Power",
       "subtitle": "Truth in Education",
-      "role": "Technical Producer",
-      "description": "A 24-hour continuous live stream designed to counter misinformation and empower voters in Florida. I designed a fully virtual production workflow on AWS, with a US crew handling daytime and a European crew running overnight.\n\nOver the course of the broadcast, we worked with 60+ remote guests and delivered 32 on-demand sessions and 72 social media clips produced in real time during the event.",
+      "role": "Producer",
+      "description": "A 24-hour continuous live stream designed to counter misinformation and empower voters in Florida. I managed the production from end to end: budget, crew, resources, and the full technical build. I partnered with an engineering team to design a virtual production workflow on AWS, then coordinated two crews across time zones to cover the broadcast. A US crew worked an eight-hour shift, a European crew took over for the next eight, and the US crew returned to close it out.\n\nOver the course of the broadcast, we worked with 60+ remote guests and delivered 32 on-demand sessions and 72 social media clips produced in real time during the event.",
       "media": {
         "type": "video",
         "src": "assets/projects/truth-in-education.mp4",
@@ -178,9 +204,9 @@ __loadProjects({
     },
     {
       "id": "nnlm-all-of-us",
-      "brand": "National Network of Library Medicine / All of Us Research Program",
+      "brand": "NNLM / NIH All of Us Research Program",
       "role": "Technical Producer",
-      "description": "30+ remote live stream events for NNLM and NIH's All of Us Research Program.\n\nOne highlight was \"Life Interrupted,\" a 9-episode series interviewing leading cancer researchers and breast cancer survivors, where the production approach had to match the gravity of the subject matter.",
+      "description": "When the pandemic shut down in-person programming, I helped NNLM pivot to virtual production, producing and directing 30+ remote live stream events. I built out virtual workflows on AWS and developed techniques for pulling NDI feeds out of Zoom.\n\nOne highlight was \"Life Interrupted,\" a virtual screening series pairing a breast cancer documentary with live panel discussions featuring oncologists, researchers, and survivors. Each screening was customized for a different community, partnering with organizations like the Black Women's Health Imperative, the Asian Health Coalition, and the National Association of Hispanic Nurses.",
       "media": {
         "type": "video",
         "src": "assets/projects/nnlm-all-of-us.mp4",
@@ -200,4 +226,5 @@ __loadProjects({
       }
     }
   ]
-});
+}
+);
