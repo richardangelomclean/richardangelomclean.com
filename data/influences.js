@@ -1,0 +1,103 @@
+__loadInfluences({
+  "books": [
+    {
+      "id": "watch-me-play",
+      "title": "Watch Me Play",
+      "author": "T.L. Taylor",
+      "cover": "assets/influences/Watch Me Play.jpg",
+      "description": "T.L. Taylor is an MIT professor who studied the culture of live streaming on Twitch. Throughout my career I'd noticed that many solo Twitch streamers can draw more viewers and participation than most big budget corporate productions. This book helped me understand why.\n\nThe internet was designed for people to explore, respond, and choose where to go next, and live streaming as a web-based format inherits that. On the Twitch streams Taylor studied, the audience and the streamer are moving through the experience together. The streamer reads the chat, reacts, responds, and adjusts what they're doing. The audience talks to each other as a shared experience unfolds in real time.\n\nThis book taught me to treat every live stream as a conversation with an audience, and over time, a dialogue with a community."
+    },
+    {
+      "id": "art-of-gathering",
+      "title": "The Art of Gathering",
+      "author": "Priya Parker",
+      "cover": "assets/influences/Art of Gathering.jpg",
+      "description": "Priya Parker's core argument is that a category is not a purpose. \"Livestream\" is a category. \"Webinar\" is a category. But neither answers the question of why you're gathering people in the first place.\n\nMost of the projects I've worked on had no answer to that question. Someone decided to have an event, decided to livestream it, and the entire production was built around gear, software, and technical specs. Nobody asked what the experience was supposed to do for the people showing up.\n\nParker showed me that gathering people is a design discipline, and that the technology is there to support that intention."
+    },
+    {
+      "id": "good-strategy-bad-strategy",
+      "title": "Good Strategy Bad Strategy",
+      "author": "Richard Rumelt",
+      "cover": "assets/influences/Good Strategy Bad Strategy.jpg",
+      "description": "Richard Rumelt is a professor at UCLA. In this book, he shows why most people have strategy wrong. What they call a \"strategy\" is usually just a list of goals and aspirations dressed up in language that sounds important.\n\nWhat this book taught me is that you can't have a strategy unless you first diagnose the challenge. Not just what you're trying to accomplish, but why it's hard. Once you can name what's difficult, you build what Rumelt calls a guiding policy: the overarching approach you'll commit to for addressing that challenge. Then you design coherent actions, the specific steps that carry out that policy. Without the diagnosis, none of it connects. It's all just wishful thinking.\n\nHe digs even deeper into this idea in his follow-up book, The Crux."
+    },
+    {
+      "id": "thinking-in-systems",
+      "title": "Thinking in Systems",
+      "author": "Donna Meadows",
+      "cover": "assets/influences/Thinking in Systems.jpg",
+      "description": "I've always been drawn to how all the pieces of a production fit together. Signal flow diagrams, crew positions, communication between departments. Meadows gave me grounded language for that instinct. This book describes how systems actually function: how their behavior over time reveals their underlying structure, and how recognizing those patterns is the key to understanding why things work or why they break down.\n\nOne concept that stuck with me is what she calls the drift to low performance. Standards slip gradually. Each small decline resets what people perceive as acceptable, and the system builds on itself in the wrong direction. Nobody decides to lower the bar. It just erodes. I've seen that pattern on productions, and learning to recognize it changed how I think about maintaining standards across a long run of shows."
+    },
+    {
+      "id": "brand-gap",
+      "title": "The Brand Gap",
+      "author": "Marty Neumeier",
+      "cover": "assets/influences/The Brand Gap.jpg",
+      "description": "Neumeier's core idea is that a brand is not what you say it is. It's what other people say it is when you're not in the room. A brand is a gut feeling, and you don't get to control it. You can only shape the experiences that influence it.\n\nThat idea changed the way I think about live streaming as a content strategy. The people who participate in your community are the ones telling other people who you are. When you go live and invite them to participate in a way where their presence actually matters, they build a deeper connection to your brand and the people behind it. That connection is what they carry with them when someone asks \"what's that company about?\" Designing for that kind of participation matters more than designing for reach."
+    },
+    {
+      "id": "art-of-community",
+      "title": "The Art of Community",
+      "author": "Charles Vogl",
+      "cover": "assets/influences/The Art of Community.jpg",
+      "description": "When marketing teams or event planners are putting together a live stream or event, they often throw around the word \"community\". It's warm and fuzzy, it feels important, but something about the way people used it always felt off to me. I could never quite articulate why until I read this book.\n\nVogl draws on thousands of years of tradition to lay out what it actually takes for people to develop a real sense of belonging. How communities form, how people progress from outsiders to committed members, and what holds the whole thing together over time. Once I had that framework, I could see why so many projects I'd worked on felt hollow when they talked about community. Most of them weren't building one."
+    },
+    {
+      "id": "opposable-mind",
+      "title": "The Opposable Mind",
+      "author": "Roger Martin",
+      "cover": "assets/influences/The Opposable Mind.jpg",
+      "description": "Roger Martin is a professor and former dean of the Rotman School of Management. His concept of integrative thinking gave me a useful model for something I do constantly in live production: when the plan falls apart on site, and the options you thought you'd have aren't available, how do you build a new solution on the fly?\n\nMartin argues that the best problem solvers don't choose between the options in front of them. They look for patterns across those options and integrate the best parts of each into something new. In production, this happens all the time. A resource disappears, a piece of equipment fails, a schedule shifts. The instinct is to just pick one and move on. Reading this book helped me understand what I'd been doing intuitively and lean into that process in a more methodical way.\n\nHe goes deeper into the methodology in his follow-up book, Creating Great Choices."
+    },
+    {
+      "id": "herzog-on-herzog",
+      "title": "Herzog on Herzog",
+      "author": "Werner Herzog",
+      "cover": "assets/influences/Herzog on Herzog.jpg",
+      "description": "This series of interviews with German director Werner Herzog completely redefined what I thought it meant to be a creative person leading a team.\n\nIn his film Fitzcarraldo, he was shooting in the Peruvian jungle when his lead actor got sick halfway through and had to leave the production. Herzog recast the role and started filming the entire project over from the beginning. The centerpiece of the story is a 320-ton steamship being hauled over a mountain, and Herzog was so determined to capture it practically that the footage in the film is real people actually doing it. No special effects.\n\nThis book expanded my sense of what one person could accomplish through sheer will and determination."
+    },
+    {
+      "id": "art-of-explanation",
+      "title": "The Art of Explanation",
+      "author": "Ros Atkins",
+      "cover": "assets/influences/The Art of Explanation.jpg",
+      "description": "Ros Atkins is a BBC presenter and journalist who has spent twenty years explaining complex stories on live television and radio. There are plenty of books on writing clearly or giving a good presentation. What makes this one different is that Atkins comes from live broadcast, and he addresses something most communication books don't: how to prepare your ideas to be questioned and challenged in real time."
+    },
+    {
+      "id": "creative-act",
+      "title": "The Creative Act: A Way of Being",
+      "author": "Rick Rubin",
+      "cover": "assets/influences/The Creative Act.jpg",
+      "description": "Rick Rubin is one of the most celebrated music producers of all time, but this book has nothing to do with music. It's about the creative process itself, specifically the parts that are hardest to explain: the intangible, the accidental, the things you can't accomplish by approaching them directly.\n\nMany of the other books on this list are about being strategic, intentional, and purposeful. This one is a reminder that a big part of the creative process is being open and receptive to connections you didn't plan to make. Rubin treats that openness as something to work with rather than something to solve. This book does something I haven't found anywhere else. It demystifies the creative process without pretending you can control it."
+    },
+    {
+      "id": "design-thinking-playbook",
+      "title": "The Design Thinking Playbook",
+      "author": "Michael Lewrick",
+      "cover": "assets/influences/The Design Thinking Playbook.jpg",
+      "description": "In live stream production, most of the creative energy goes into bringing the crew together to make sure all the technology is working and the plan gets executed. What's often missing is how that plan fits into a bigger picture. What's the purpose of it? How does it create value for the businesses involved?\n\nLewrick's Design Thinking series gave me practical tools for thinking through those questions. The books are filled with visual guides, mental models, and workshop exercises for structuring how you approach problem-solving on a project. The whole series is worth reading, including The Design Thinking Toolbox, Design Thinking and Innovation Metrics, and Design Thinking for Business Growth."
+    },
+    {
+      "id": "value-proposition-design",
+      "title": "Value Proposition Design",
+      "author": "Alexander Osterwalder",
+      "cover": "assets/influences/Value Proposition Design 2.jpg",
+      "description": "Over the years, I've noticed a pattern in how creative people work. We make something, put it out into the world, and hope it finds an audience that gets something meaningful out of it.\n\nI'd always understood that empathy matters when you're trying to create something valuable for other people. But I'd never seen anyone break down the mechanics of value the way Osterwalder does in this book. He offers multiple frameworks and templates that help you think through the jobs people are trying to get done, what gets in their way, and what outcomes they're really hoping for. Then he shows you how to design something that addresses all three. I'd never seen anyone lay it out with that level of detail and clarity.\n\nHis other books, Business Model Generation, Testing Business Ideas, and High Impact Tools for Teams, are all part of the same series and just as useful."
+    },
+    {
+      "id": "building-a-storybrand",
+      "title": "Building A StoryBrand",
+      "author": "Donald Miller",
+      "cover": "assets/influences/Build A Story Brand.jpg",
+      "description": "Miller argues that most companies and brands make the same mistake: they make themselves the hero of the story. His reframe is that effective communication puts your audience in that role instead. As he puts it, you're not Luke Skywalker. You're Yoda. The people you serve are Luke Skywalker.\n\nI see this constantly in productions. The organization is so focused on the exact wording of their message, the exact presentation they want to put out, that there's no room to consider what's actually meaningful for the audience. Why would anyone care? What would make them feel like this was for them? Miller gave me a lens I now run every idea through. Is the person we're speaking to the hero of this story? Can they see themselves in it? It sounds simple, but it's surprisingly easy to get wrong."
+    },
+    {
+      "id": "design-of-everyday-things",
+      "title": "The Design of Everyday Things",
+      "author": "Don Norman",
+      "cover": "assets/influences/Design of Everyday Things.png",
+      "description": "This book helped me understand that when something is easy to use, it's usually because someone was intentional about how it was designed. Norman calls this quality an affordance: when something is designed well, it communicates how it's meant to be used without explanation. A door handle tells you to pull. A cup handle tells you where to grip. Once I understood that, I started seeing design everywhere.\n\nThat idea influences how I approach production work. How should a run of show be structured so the crew can read it under pressure? How should gear be labeled and packed so someone unfamiliar with the setup can find what they need? Design is about making things intuitive for the person using them, and I carry that into everything I put in front of a team."
+    }
+  ]
+}
+);

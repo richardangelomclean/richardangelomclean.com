@@ -4,3 +4,8 @@ Thumbs.db
 .vscode/
 .idea/
 node_modules/
+
+# Working docs (not site content)
+cowork-prompts/
+project-copywriting.md
+schema-draft.md

@@ -10,6 +10,7 @@
   const content = document.getElementById("carousel-content");
   const prevBtn = document.getElementById("carousel-prev");
   const nextBtn = document.getElementById("carousel-next");
+  const counterEl = document.getElementById("carousel-counter");
 
   if (!content || !prevBtn || !nextBtn) return;
 
@@ -21,8 +22,24 @@
   function renderMediaWithButtons(media) {
     var mediaHtml = '';
 
-    if (!media || !media.src) {
+    if (!media || (!media.src && !media.wistiaId)) {
       mediaHtml = '<div class="carousel__media" aria-hidden="true"></div>';
+    } else if (media.type === "wistia") {
+      // Wistia embed — uses <wistia-player> custom element with play controls
+      var wistiaId = escapeAttr(media.wistiaId);
+      mediaHtml = (
+        '<div class="carousel__media carousel__media--wistia">' +
+          '<wistia-player media-id="' + wistiaId + '" aspect="1.7777777777777777"></wistia-player>' +
+        "</div>"
+      );
+      // Load the media-specific Wistia embed script
+      if (!document.querySelector('script[src*="' + wistiaId + '"]')) {
+        var ws = document.createElement("script");
+        ws.src = "https://fast.wistia.com/embed/" + wistiaId + ".js";
+        ws.async = true;
+        ws.type = "module";
+        document.head.appendChild(ws);
+      }
     } else {
       const safeAlt = escapeHtml(media.alt || "");
 
@@ -77,6 +94,12 @@
     );
   }
 
+  function updateCounter() {
+    if (counterEl && projects.length) {
+      counterEl.textContent = (index + 1) + " of " + projects.length;
+    }
+  }
+
   // Pause videos that are no longer visible, play the current one
   function manageVideo() {
     var videos = content.querySelectorAll("video");
@@ -97,6 +120,7 @@
       attachStaticButtonListeners();
       manageVideo();
       syncNavVisibility();
+      updateCounter();
     }, 180);
   }
 
@@ -169,6 +193,7 @@
     attachButtonListeners();
     attachStaticButtonListeners();
     syncNavVisibility();
+    updateCounter();
   }
 
   // Try fetch first (works on http/https); fall back to <script> injection for file://

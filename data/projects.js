@@ -1,4 +1,5 @@
-__loadProjects({
+__loadProjects(
+{
   "projects": [
     {
       "id": "mtg-pro-tour",
@@ -85,6 +86,18 @@ __loadProjects({
       }
     },
     {
+      "id": "red-bull-home-ground",
+      "brand": "Red Bull Home Ground",
+      "subtitle": "Ludwig & Tarik Co-Stream",
+      "role": "Technical Director",
+      "description": "The first-ever Red Bull Home Ground North American Qualifier, a Valorant tournament at Fremont Studios in Seattle featuring Cloud9, Sentinels, and Shopify Rebellion competing for a spot at the World Finals.\n\nI operated the switcher for the co-stream, a multi-camera commentary broadcast featuring Ludwig Ahgren and Tarik Çelik. During matches, they appeared picture-in-picture over the main esports feed. During lulls, they went full screen. Eight hours of live switching as the tournament unfolded.",
+      "media": {
+        "type": "video",
+        "src": "assets/projects/red-bull-home-ground.mp4",
+        "alt": "Red Bull Home Ground Valorant tournament co-stream production clip."
+      }
+    },
+    {
       "id": "pokemon-worlds-game-show",
       "brand": "Pokémon",
       "subtitle": "The Gotta Catch 'Em All! Game Show Live at Pokémon Worlds",
@@ -97,15 +110,15 @@ __loadProjects({
       }
     },
     {
-      "id": "red-bull-home-ground",
-      "brand": "Red Bull Home Ground",
-      "subtitle": "Ludwig & Tarik Co-Stream",
-      "role": "Technical Director",
-      "description": "The first-ever Red Bull Home Ground North American Qualifier, a Valorant tournament at Fremont Studios in Seattle featuring Cloud9, Sentinels, and Shopify Rebellion competing for a spot at the World Finals.\n\nI operated the switcher for the co-stream, a multi-camera commentary broadcast featuring Ludwig Ahgren and Tarik Çelik. During matches, they appeared picture-in-picture over the main esports feed. During lulls, they went full screen. Eight hours of live switching as the tournament unfolded.",
+      "id": "tiktok-creator-rewards",
+      "brand": "TikTok",
+      "subtitle": "Creator Rewards Program | Education Series",
+      "role": "Technical Producer",
+      "description": "An ongoing live stream series produced for members of TikTok's Creator Rewards Program, running several times a week over the course of multiple months. Established TikTok creators joined as guests to share how they built their careers on the platform, covering topics like brand partnerships, long-form storytelling, monetizing content, and production standards.\n\nRemote talent joined through Zoom and was brought into vMix for the live broadcast, which streamed to a custom landing page accessible only to invited community members. Through Hovercast's interactive platform, the audience could participate via an interactive map, trivia questions, live polls, and Q&A alongside the stream.\n\nProduced in partnership with Hovercast.",
       "media": {
         "type": "video",
-        "src": "assets/projects/red-bull-home-ground.mp4",
-        "alt": "Red Bull Home Ground Valorant tournament co-stream production clip."
+        "src": "assets/projects/tiktok-selected-work-2.mp4",
+        "alt": "TikTok Creator Rewards Program live stream production clip."
       }
     },
     {
@@ -153,6 +166,42 @@ __loadProjects({
         "type": "video",
         "src": "assets/projects/good-at-stuff.mp4",
         "alt": "Good at Stuff arts and crafts live stream production clip."
+      }
+    },
+    {
+      "id": "chefsteps-live",
+      "brand": "ChefSteps",
+      "subtitle": "ChefSteps Live!",
+      "role": "Director & Technical Producer",
+      "description": "I directed and produced six live cooking classes for ChefSteps, a YouTube channel with over a million subscribers, designed to encourage viewers of their free content to sign up for the exclusive Studio Pass membership.\n\nWe highlighted the benefits of membership by inviting select Studio Pass members to appear on camera, adding exclusivity and sparking curiosity. Each class, covering everything from Thanksgiving turkey to Valentine's chocolate steak, featured interactive polls and responses to questions via live chat, allowing viewers to influence the sessions.",
+      "media": {
+        "type": "wistia",
+        "wistiaId": "el33xa3vk4",
+        "alt": "ChefSteps Live cooking class live stream production."
+      }
+    },
+    {
+      "id": "williams-sonoma-coffee",
+      "brand": "Williams-Sonoma",
+      "subtitle": "Coffee Classes",
+      "role": "Director & Technical Producer",
+      "description": "I directed and produced 12 interactive coffee classes for Williams-Sonoma, designed for new espresso machine owners, turning their kitchens into a collaborative learning experience.\n\nLed by 2019 US Barista Champion Sam Spillman, the classes covered everything from grinding beans to latte art. Participants didn't just get a lecture about coffee techniques; they actively shared their creations and received live feedback from Sam in real time through a custom Zoom integration, fostering an interactive and supportive environment.",
+      "media": {
+        "type": "wistia",
+        "wistiaId": "budrolpwia",
+        "alt": "Williams-Sonoma interactive coffee class live stream production."
+      }
+    },
+    {
+      "id": "crate-and-barrel-cratekitchen",
+      "brand": "Crate & Barrel",
+      "subtitle": "Live from CrateKitchen",
+      "role": "Director & Technical Producer",
+      "description": "At CrateKitchen in Northbrook, IL, I directed and produced nine live sessions: three cooking classes and six espresso classes.\n\nWe collaborated with renowned chefs and baristas, including Carolina Gellen, Top Chef's Nini Nguyen, and 2020 US Barista Champion Andrea Allen. These experts shared invaluable tips and tricks while showcasing Crate & Barrel's most popular products.\n\nWhile most of the audience watched on YouTube, we offered a VIP exclusive experience in Zoom for select community members. These Zoom attendees could interact directly with the chefs and baristas and get feedback as they followed along at home. At the end of each class, we held a product giveaway specifically for the Zoom audience.",
+      "media": {
+        "type": "wistia",
+        "wistiaId": "ieeupkf6mj",
+        "alt": "Crate and Barrel CrateKitchen live cooking and espresso class production."
       }
     },
     {
