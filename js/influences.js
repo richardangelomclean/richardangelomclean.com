@@ -78,9 +78,31 @@
   }
 
   // --- Controls ---------------------------------------------------------------
+  // Fire on pointerdown so taps register the moment the finger lands, bypassing
+  // the iOS double-tap-to-zoom click delay entirely. Click is kept as a fallback
+  // for keyboard users (Enter/Space). Time-based debounce prevents one user
+  // action from firing twice (pointerdown → synthetic click ~50ms later).
 
-  if (prevBtn) prevBtn.addEventListener("click", function () { update(index - 1); });
-  if (nextBtn) nextBtn.addEventListener("click", function () { update(index + 1); });
+  function debounce(fn) {
+    var lastFired = 0;
+    return function () {
+      var now = Date.now();
+      if (now - lastFired < 300) return;
+      lastFired = now;
+      fn();
+    };
+  }
+
+  if (prevBtn) {
+    var goPrev = debounce(function () { update(index - 1); });
+    prevBtn.addEventListener("pointerdown", goPrev);
+    prevBtn.addEventListener("click", goPrev);
+  }
+  if (nextBtn) {
+    var goNext = debounce(function () { update(index + 1); });
+    nextBtn.addEventListener("pointerdown", goNext);
+    nextBtn.addEventListener("click", goNext);
+  }
 
   // --- Helpers ----------------------------------------------------------------
 

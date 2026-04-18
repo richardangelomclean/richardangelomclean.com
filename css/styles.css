@@ -1015,7 +1015,17 @@ section { margin-bottom: 5rem; }
   /* Disable mobile double-tap-to-zoom delay on these buttons */
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
   transition: background-color 200ms var(--ease), border-color 200ms var(--ease);
+}
+
+/* Invisible hit-area extension — adds 10px of tappable space on every side
+   without changing the visible button size. Catches finger-imprecise taps. */
+.influences__btn::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
 }
 
 /* Mobile: flush with panel edges */
