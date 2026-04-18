@@ -81,7 +81,7 @@
   function renderCard(project) {
     var titleHtml = '<h3 class="carousel__brand">' + escapeHtml(project.brand) + "</h3>";
     if (project.subtitle) {
-      titleHtml += '<div class="carousel__subtitle">' + escapeHtml(project.subtitle) + "</div>";
+      titleHtml += '<div class="carousel__subtitle">' + renderInline(project.subtitle) + "</div>";
     }
 
     return (
@@ -163,8 +163,15 @@
     if (!text) return "";
     var paragraphs = String(text).split("\n\n");
     return paragraphs.map(function (p) {
-      return '<p class="carousel__description">' + escapeHtml(p.trim()) + "</p>";
+      return '<p class="carousel__description">' + renderInline(p.trim()) + "</p>";
     }).join("");
+  }
+
+  // Escape HTML first, then convert *text* markers to <em> tags.
+  // Order matters: escape runs on raw content so user text stays safe; the
+  // italic conversion only affects our own asterisk markers (added in JSON).
+  function renderInline(str) {
+    return escapeHtml(str).replace(/\*([^*]+)\*/g, "<em>$1</em>");
   }
 
   function escapeHtml(str) {

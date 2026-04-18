@@ -63,9 +63,9 @@
     {
       "id": "reddit-hall-r",
       "brand": "Reddit",
-      "subtitle": "Hall R — Terminator: Dark Fate AMA",
+      "subtitle": "Hall R — *Terminator: Dark Fate* AMA",
       "role": "Producer",
-      "description": "Reddit's first-ever live-streamed Ask Me Anything, broadcast from San Diego Comic-Con with Arnold Schwarzenegger, Linda Hamilton, and the cast of Terminator: Dark Fate.\n\nWe used Hovercast to connect directly to Reddit's API, pulling live posts from the platform and displaying them as on-screen graphics integrated into the broadcast. I fed cues to host Scott Rogowsky via IFB throughout the show. Produced in collaboration with Mirrored Media.",
+      "description": "Reddit's first-ever live-streamed Ask Me Anything, broadcast from San Diego Comic-Con with Arnold Schwarzenegger, Linda Hamilton, and the cast of *Terminator: Dark Fate*.\n\nWe used Hovercast to connect directly to Reddit's API, pulling live posts from the platform and displaying them as on-screen graphics integrated into the broadcast. I fed cues to host Scott Rogowsky via IFB throughout the show. Produced in collaboration with Mirrored Media.",
       "media": {
         "type": "video",
         "src": "assets/projects/reddit-hall-r.mp4",
@@ -89,7 +89,7 @@
       "brand": "Red Bull Home Ground",
       "subtitle": "Ludwig & Tarik Co-Stream",
       "role": "Technical Director",
-      "description": "The first-ever Red Bull Home Ground North American Qualifier, a Valorant tournament at Fremont Studios in Seattle featuring Cloud9, Sentinels, and Shopify Rebellion competing for a spot at the World Finals.\n\nI operated the switcher for the co-stream, a multi-camera commentary broadcast featuring Ludwig Ahgren and Tarik Çelik. During matches, they appeared picture-in-picture over the main esports feed. During lulls, they went full screen. Eight hours of live switching as the tournament unfolded.",
+      "description": "The first-ever Red Bull Home Ground North American Qualifier, a *Valorant* tournament at Fremont Studios in Seattle featuring Cloud9, Sentinels, and Shopify Rebellion competing for a spot at the World Finals.\n\nI operated the switcher for the co-stream, a multi-camera commentary broadcast featuring Ludwig Ahgren and Tarik Çelik. During matches, they appeared picture-in-picture over the main esports feed. During lulls, they went full screen. Eight hours of live switching as the tournament unfolded.",
       "media": {
         "type": "video",
         "src": "assets/projects/red-bull-home-ground.mp4",
@@ -134,9 +134,9 @@
     {
       "id": "throne-and-liberty",
       "brand": "Amazon Games",
-      "subtitle": "Throne and Liberty — \"Siege the Day\"",
+      "subtitle": "*Throne and Liberty* — \"Siege the Day\"",
       "role": "Director",
-      "description": "A two-day live stream launching Amazon Games' MMORPG Throne and Liberty, broadcast from their Seattle studio for North American and European audiences. Hosted by PancakepowTV with shoutcaster Notgrenton.\n\nThe centerpiece was Castle Siege, one of the few game modes in online gaming where thousands of players fight simultaneously on a single server. Covering that required 16 observer machines, each one a virtual camera inside the game world fed into our switcher. I directed the broadcast as the hosts and commentators called the action from the studio.",
+      "description": "A two-day live stream launching Amazon Games' MMORPG *Throne and Liberty*, broadcast from their Seattle studio for North American and European audiences. Hosted by PancakepowTV with shoutcaster Notgrenton.\n\nThe centerpiece was Castle Siege, one of the few game modes in online gaming where thousands of players fight simultaneously on a single server. Covering that required 16 observer machines, each one a virtual camera inside the game world fed into our switcher. I directed the broadcast as the hosts and commentators called the action from the studio.",
       "media": {
         "type": "video",
         "src": "assets/projects/throne-and-liberty.mp4",
@@ -196,7 +196,7 @@
       "brand": "Crate & Barrel",
       "subtitle": "Live from CrateKitchen",
       "role": "Director & Technical Producer",
-      "description": "At CrateKitchen in Northbrook, IL, I directed and produced nine live sessions: three cooking classes and six espresso classes.\n\nWe collaborated with renowned chefs and baristas, including Carolina Gellen, Top Chef's Nini Nguyen, and 2020 US Barista Champion Andrea Allen. These experts shared invaluable tips and tricks while showcasing Crate & Barrel's most popular products.\n\nWhile most of the audience watched on YouTube, we offered a VIP exclusive experience in Zoom for select community members. These Zoom attendees could interact directly with the chefs and baristas and get feedback as they followed along at home. At the end of each class, we held a product giveaway specifically for the Zoom audience.",
+      "description": "At CrateKitchen in Northbrook, IL, I directed and produced nine live sessions: three cooking classes and six espresso classes.\n\nWe collaborated with renowned chefs and baristas, including Carolina Gellen, *Top Chef*'s Nini Nguyen, and 2020 US Barista Champion Andrea Allen. These experts shared invaluable tips and tricks while showcasing Crate & Barrel's most popular products.\n\nWhile most of the audience watched on YouTube, we offered a VIP exclusive experience in Zoom for select community members. These Zoom attendees could interact directly with the chefs and baristas and get feedback as they followed along at home. At the end of each class, we held a product giveaway specifically for the Zoom audience.",
       "media": {
         "type": "wistia",
         "wistiaId": "ieeupkf6mj",

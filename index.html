@@ -8,9 +8,16 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Richard Angelo McLean | Live Multi-Camera Production Leader" />
-  <meta property="og:description" content="Emmy-winning live multi-camera director, producer, and technical director. 16+ years leading complex live stream productions." />
+  <meta property="og:title" content="I lead complex live multicam productions." />
+  <meta property="og:description" content="Director, producer, and technical director for ambitious live stream series and shows." />
   <meta property="og:url" content="https://richardangelomclean.com" />
+  <meta property="og:image" content="https://richardangelomclean.com/assets/headshot.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="I lead complex live multicam productions." />
+  <meta name="twitter:description" content="Director, producer, and technical director for ambitious live stream series and shows." />
+  <meta name="twitter:image" content="https://richardangelomclean.com/assets/headshot.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -34,7 +41,14 @@
   <nav class="nav" aria-label="Primary">
     <div class="container nav__inner">
       <a class="nav__brand" href="#top">Richard Angelo McLean</a>
-      <ul class="nav__links" role="list">
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav__toggle-bars" aria-hidden="true">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </span>
+      </button>
+      <ul class="nav__links" id="nav-links" role="list">
         <li><a class="nav__link nav__link--active" href="#work">Work</a></li>
         <li><a class="nav__link" href="#about">About</a></li>
         <li><a class="nav__link" href="#influences">How I Think</a></li>
@@ -122,7 +136,7 @@
         <div class="influences__header">
           <h2 id="influences-heading" class="influences__title">How I Think</h2>
         </div>
-        <p class="influences__intro">I take a multidisciplinary approach to solving problems for my clients.<br />Here are a few of the books that changed the way I work.</p>
+        <p class="influences__intro">I take a multidisciplinary approach to solving problems for my clients.<br />Here are a few of the books and courses that changed the way I think.</p>
 
         <div class="influences__carousel" aria-roledescription="carousel" aria-label="Book influences">
           <div class="influences__content-wrapper">
@@ -139,7 +153,7 @@
             </button>
           </div>
 
-          <div class="influences__counter" id="influences-counter" aria-live="polite">1 of 14</div>
+          <div class="influences__counter" id="influences-counter" aria-live="polite">1 of 16</div>
         </div>
       </div>
     </section>
@@ -161,7 +175,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
-      <div class="footer__copy">© 2026 Richard Angelo McLean. Built with intentionality.</div>
+      <div class="footer__copy">© 2026 Richard Angelo McLean. Built with intention using Google Stitch and Claude Cowork.</div>
       <div class="footer__links">
         <a href="https://www.linkedin.com/in/richard-angelo-mclean/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://substack.com/@richardangelomclean" target="_blank" rel="noopener noreferrer">Substack</a>
@@ -174,6 +188,7 @@
   <script src="js/rotator.js" defer></script>
   <script src="js/landscape.js" defer></script>
   <script src="js/nav-scroll.js" defer></script>
+  <script src="js/nav-toggle.js" defer></script>
 
   <!-- Cloudflare Web Analytics -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "78a08e1334814730b1b8f384d3ca0ebf"}'></script>
