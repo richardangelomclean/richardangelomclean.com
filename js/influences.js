@@ -2,6 +2,10 @@
    Influences / How I Think Carousel
    Loads books from data/influences.json and renders one card at a time.
    Two-column layout: book cover (left) + text (right).
+
+   Cover space is reserved via CSS aspect-ratio (2:3) on .influences__cover,
+   so the layout never shifts when images load. All covers are preloaded on
+   init so card swaps read from cache and feel instant.
    ========================================================================== */
 
 (function () {
@@ -11,35 +15,11 @@
   var prevBtn = document.getElementById("influences-prev");
   var nextBtn = document.getElementById("influences-next");
   var counterEl = document.getElementById("influences-counter");
-  var contentWrapper = document.querySelector(".influences__content-wrapper");
 
   if (!content) return;
 
   var books = [];
   var index = 0;
-
-  // --- Mobile arrow positioning ---------------------------------------------
-  // On mobile the cover image height varies by aspect ratio, so we measure the
-  // cover after render and set a CSS variable the arrows read.
-  // On desktop the CSS uses a fixed top (var is ignored there).
-
-  function positionArrows() {
-    if (!contentWrapper) return;
-    var cover = content.querySelector(".influences__cover");
-    if (!cover) return;
-    var h = cover.offsetHeight;
-    if (h === 0) return; // image not laid out yet
-    var centerY = cover.offsetTop + h / 2;
-    contentWrapper.style.setProperty("--cover-center", centerY + "px");
-  }
-
-  function positionArrowsWhenReady() {
-    positionArrows();
-    var img = content.querySelector(".influences__cover img");
-    if (img && !img.complete) {
-      img.addEventListener("load", positionArrows, { once: true });
-    }
-  }
 
   // --- Render a single book card ---------------------------------------------
 
@@ -84,15 +64,23 @@
       content.innerHTML = renderCard(books[index]);
       content.classList.remove("is-transitioning");
       updateCounter();
-      positionArrowsWhenReady();
     }, 180);
+  }
+
+  // Warm the browser cache with every cover so card swaps are instant.
+  // Runs after the first card renders, so it doesn't block initial paint.
+  function preloadCovers() {
+    books.forEach(function (book) {
+      if (!book.cover) return;
+      var img = new Image();
+      img.src = book.cover;
+    });
   }
 
   // --- Controls ---------------------------------------------------------------
 
   if (prevBtn) prevBtn.addEventListener("click", function () { update(index - 1); });
   if (nextBtn) nextBtn.addEventListener("click", function () { update(index + 1); });
-  window.addEventListener("resize", positionArrows);
 
   // --- Helpers ----------------------------------------------------------------
 
@@ -120,7 +108,7 @@
     }
     content.innerHTML = renderCard(books[0]);
     updateCounter();
-    positionArrowsWhenReady();
+    preloadCovers();
   }
 
   // Try fetch first (works on http/https); fall back to <script> injection for file://

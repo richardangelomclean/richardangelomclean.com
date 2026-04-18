@@ -902,12 +902,17 @@ section { margin-bottom: 5rem; }
   }
 }
 
-/* Book cover */
+/* Book cover — fixed 2:3 aspect ratio so the layout reserves space
+   before the image loads. Prevents layout shift when switching cards
+   and lets arrows pin to a known vertical center via pure CSS. */
 .influences__cover {
   flex-shrink: 0;
   width: 10rem;
   max-width: 50%;
   margin-inline: auto;
+  aspect-ratio: 2 / 3;
+  background: var(--color-bg);
+  border-radius: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -925,7 +930,8 @@ section { margin-bottom: 5rem; }
 
 .influences__cover img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
   border-radius: 0.5rem;
   box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15);
 }
@@ -976,12 +982,14 @@ section { margin-bottom: 5rem; }
   area (not overlaying the cover — it's too narrow on mobile).
 
   Desktop: Arrows sit in the panel's padding gap, same vertical anchor.
+
+  With the cover locked to a 2:3 aspect ratio, arrow position is deterministic:
+  Mobile cover = 10rem wide × 1.5 = 15rem tall. Card padding-top = 1.5rem.
+  Cover vertical center = 1.5rem + 7.5rem = 9rem from wrapper top.
 */
 .influences__btn {
   position: absolute;
-  /* Mobile: JS sets --cover-center to the vertical midpoint of the book cover.
-     Fallback 12rem keeps things sane if JS hasn't run yet. */
-  top: var(--cover-center, 12rem);
+  top: 9rem;
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
@@ -1017,7 +1025,8 @@ section { margin-bottom: 5rem; }
   }
 
   .influences__btn {
-    /* Desktop: fixed vertical anchor — ignore the mobile --cover-center var */
+    /* Desktop: fixed vertical anchor. With cover locked to 12rem × 18rem
+       (2:3 ratio), the card's vertical geometry is stable across all books. */
     top: 18rem;
     transform: none;
     width: 48px;
