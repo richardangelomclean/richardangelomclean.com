@@ -636,6 +636,56 @@ section { margin-bottom: 5rem; }
   display: none;
 }
 
+/* Mobile carousel nav row — arrows flanking counter, between media and info */
+.carousel__mobile-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.carousel__mobile-counter {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-subtle);
+  letter-spacing: 0.02em;
+}
+
+.carousel__mobile-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-amber);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: background-color 200ms var(--ease), border-color 200ms var(--ease);
+}
+
+.carousel__mobile-btn:hover {
+  border-color: var(--color-amber);
+  background: rgba(255, 255, 255, 1);
+}
+
+.carousel__mobile-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel__mobile-btn svg { width: 1.125rem; height: 1.125rem; }
+
+@media (min-width: 768px) {
+  .carousel__mobile-nav { display: none; }
+}
+
 /* Overlay wrapper for media + buttons */
 .carousel__media-wrapper {
   position: relative;
@@ -644,7 +694,13 @@ section { margin-bottom: 5rem; }
 
 .carousel__overlay-buttons {
   pointer-events: none;
-  display: flex;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .carousel__overlay-buttons {
+    display: flex;
+  }
 }
 
 .carousel__btn {
@@ -694,10 +750,6 @@ section { margin-bottom: 5rem; }
 
 /* Desktop: 48x48 buttons, positioned inside the panel's padding gap */
 @media (min-width: 768px) {
-  .carousel__overlay-buttons {
-    display: flex;
-  }
-
   .carousel__btn {
     position: absolute;
     top: 50%;
@@ -1121,6 +1173,11 @@ section { margin-bottom: 5rem; }
   text-align: center;
   margin-top: 1.5rem;
   letter-spacing: 0.02em;
+}
+
+/* Hide static counter on mobile — mobile nav row has its own */
+@media (max-width: 767px) {
+  .carousel__counter { display: none; }
 }
 
 /* ==========================================================================

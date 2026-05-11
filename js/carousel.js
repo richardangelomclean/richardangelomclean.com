@@ -86,6 +86,15 @@
 
     return (
       renderMediaWithButtons(project.media) +
+      '<div class="carousel__mobile-nav">' +
+        '<button class="carousel__mobile-btn carousel__mobile-btn--prev" type="button" aria-label="Previous project">' +
+          '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="currentColor"/></svg>' +
+        '</button>' +
+        '<span class="carousel__mobile-counter"></span>' +
+        '<button class="carousel__mobile-btn carousel__mobile-btn--next" type="button" aria-label="Next project">' +
+          '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" fill="currentColor"/></svg>' +
+        '</button>' +
+      '</div>' +
       '<div class="carousel__info">' +
         '<div class="carousel__title-group">' + titleHtml + "</div>" +
         '<div class="carousel__role">' + escapeHtml(project.role) + "</div>" +
@@ -95,8 +104,13 @@
   }
 
   function updateCounter() {
+    var text = (index + 1) + " of " + projects.length;
     if (counterEl && projects.length) {
-      counterEl.textContent = (index + 1) + " of " + projects.length;
+      counterEl.textContent = text;
+    }
+    var mobileCounter = content.querySelector(".carousel__mobile-counter");
+    if (mobileCounter && projects.length) {
+      mobileCounter.textContent = text;
     }
   }
 
@@ -125,8 +139,8 @@
   }
 
   function attachButtonListeners() {
-    const prevBtns = content.querySelectorAll(".carousel__btn--prev");
-    const nextBtns = content.querySelectorAll(".carousel__btn--next");
+    const prevBtns = content.querySelectorAll(".carousel__btn--prev, .carousel__mobile-btn--prev");
+    const nextBtns = content.querySelectorAll(".carousel__btn--next, .carousel__mobile-btn--next");
     prevBtns.forEach(function (btn) {
       btn.addEventListener("click", function () { update(index - 1); });
     });
