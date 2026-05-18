@@ -69,19 +69,18 @@
       // The trigger point in the document
       var triggerPoint = scrollY + offset;
 
-      // Find which section is currently active using "nearest section" algorithm.
-      // The active section is whichever section's top is closest to the trigger
-      // point. This gives short sections (like About) a fair share of scroll
-      // range — each section's zone extends halfway to its neighbours.
+      // Find which section is currently active using "last section passed"
+      // algorithm. The active section is the last one whose top we've scrolled
+      // past. This means each section's zone extends from its top all the way
+      // to the next section's top. Sections without nav links (like Video Case
+      // Studies) are naturally absorbed into the zone of the previous nav section.
       var current = sections[0];
-      var closestDist = Infinity;
 
-      for (var i = 0; i < sections.length; i++) {
+      for (var i = sections.length - 1; i >= 0; i--) {
         var sectionTop = getAbsoluteTop(sections[i].element);
-        var dist = Math.abs(triggerPoint - sectionTop);
-        if (dist < closestDist) {
-          closestDist = dist;
+        if (triggerPoint >= sectionTop) {
           current = sections[i];
+          break;
         }
       }
 
