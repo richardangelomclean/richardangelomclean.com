@@ -915,6 +915,20 @@ section { margin-bottom: 5rem; }
   margin: 0;
 }
 
+.about__body a {
+  color: var(--color-brand-blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s ease;
+}
+
+.about__body a:hover,
+.about__body a:focus-visible {
+  color: var(--color-amber);
+}
+
 .about__headshot {
   position: relative;
   aspect-ratio: 4 / 5;
