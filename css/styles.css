@@ -857,7 +857,7 @@ section { margin-bottom: 5rem; }
 
 @media (min-width: 1024px) {
   .about__grid {
-    grid-template-columns: 6fr 5fr;
+    grid-template-columns: 7fr 4fr;
     gap: 5rem;
   }
 }
@@ -886,7 +886,7 @@ section { margin-bottom: 5rem; }
 .about__bridge {
   font-family: var(--font-headline);
   font-weight: 800;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--color-charcoal);
@@ -895,7 +895,7 @@ section { margin-bottom: 5rem; }
 
 @media (max-width: 767px) {
   .about__bridge {
-    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    font-size: clamp(0.95rem, 3.6vw, 2.25rem);
   }
 }
 
