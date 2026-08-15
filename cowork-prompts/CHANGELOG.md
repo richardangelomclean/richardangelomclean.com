@@ -6,6 +6,30 @@ Format: `## [version] — YYYY-MM-DD` followed by what changed and why.
 
 ---
 
+## [1.3.0] — 2026-08-06
+
+**SEO release.** Implements the technical SEO plan (see Notion: Context for Claude > SEO Plan). Motivation: site was indexed but had no relevance signals for "Richard McLean" (exact phrase) or "Seattle", both absent from the page. Most items were bookmarked in next-deploy-plan.md and never shipped.
+
+### Changed
+- Title tag: now "Richard McLean | Seattle Live Multi-Camera Production Director"
+- Meta description: rewritten to include name, Seattle, Emmy, and role keywords
+- Added canonical link tag (apex domain)
+- Added JSON-LD Person schema in head (from schema-draft.md, completed: sameAs filled with 8 profiles including IMDb nm8883810 and Instagram; alternateName "Richard McLean" / "Richard A. McLean"; Seattle PostalAddress; em dashes replaced per copy rule)
+- About bio: added one sentence "I'm based in Seattle and work with productions locally and worldwide."
+- Footer: added "· Seattle, WA" after name
+
+### Added
+- sitemap.xml (single URL; fixes the 404 referenced by robots.txt)
+- _redirects (301 www -> apex, forced)
+
+### Deferred to Richard
+- git push (Netlify deploy, 15 credits)
+- Google Search Console setup + sitemap submission
+- Adding site link to LinkedIn, UW Comm Lead profile, Relay Station about page, Substack, CreativeMornings
+- Confirm old Wix site fully offline before September cancellation
+
+---
+
 ## [1.0.0] — 2026-04-09
 
 **Initial snapshot.** Captures the full project state after the first extended Cowork build session.

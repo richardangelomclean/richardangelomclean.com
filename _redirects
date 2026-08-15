@@ -1,0 +1,3 @@
+# Canonical host: apex domain. 301 all www traffic to non-www.
+https://www.richardangelomclean.com/* https://richardangelomclean.com/:splat 301!
+http://www.richardangelomclean.com/* https://richardangelomclean.com/:splat 301!
