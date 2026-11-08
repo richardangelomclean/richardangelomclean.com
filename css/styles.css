@@ -404,6 +404,9 @@ section { margin-bottom: 5rem; }
   font-weight: 700;
 }
 
+/* Blue without the bold: hero line keeps its normal weight */
+.hero__positioning .accent--regular { font-weight: inherit; }
+
 /* Hero CTA */
 .hero__cta {
   margin-top: 2.5rem;
